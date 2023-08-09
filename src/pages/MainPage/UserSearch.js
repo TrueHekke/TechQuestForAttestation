@@ -78,7 +78,7 @@ const UserSearch = (inputValue) => {
         <CheckedUsers {...allUsersQuery} searched={searched} /> 
       </S.MainList>
       <S.Navigation>
-        <S.Pagination>
+      {searched && ( <S.Pagination>
           {Array.from({ length: 10}, (_, index) => (
             <S.PaginationItem
               key={index}
@@ -89,6 +89,7 @@ const UserSearch = (inputValue) => {
             </S.PaginationItem>
           ))}
         </S.Pagination>
+        )}
       </S.Navigation>
     </S.Main>
   );
